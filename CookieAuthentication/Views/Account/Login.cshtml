@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="main">
+    <h2>Cookie Authentication Login</h2>
+    <br />
+    <br />
+    <h3>Enter your login credentials</h3>
+
+    <form method="post" action="Login">
+
+        <input type="hidden" id="ReturnUrl" name="ReturnUrl" value="@Context.Request.Query["ReturnUrl"]" />
+        <input type="hidden" id="Location" name="Location" value="@ViewData["Location"]" />
+
+        <label for="first"> Username: </label>
+        <input type="text" id="UserName" name="UserName" value="admin"  placeholder="Enter your Username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="Password" name="Password" value="admin" placeholder="Enter your Password" required>
+        <div class="wrap">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+@if (ViewData["Location"] != null)
+{
+    <div style="padding-top: 30px;">
+        ReturnUrl: @Context.Request.Query["ReturnUrl"]<br />
+        Location: @ViewData["Location"]
+    </div>
+}

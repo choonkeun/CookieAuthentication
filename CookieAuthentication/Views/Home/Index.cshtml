@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Cookie Authentication !!!</h1>
+    <p>This application shows how Cookie Authentication works in .NET 8.0</p>
+    <br />
+    <p>Action Filter [Authorize] will redirect to Login Page</p>
+
+</div>
+
+@if (ViewData["Location"] != null)
+{
+    <div style="padding-top: 30px;">
+        ReturnUrl: @Context.Request.Query["ReturnUrl"]<br />
+        Location: @ViewData["Location"]
+    </div>
+}

@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Transient";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>
+
+<br />
+<h2>You will see this page after login with Coolkie Authentication !!!</h2>
+
+
+@if (ViewData["Location"] != null)
+{
+    <div style="padding-top: 30px;">
+        ReturnUrl: @Context.Request.Query["ReturnUrl"]<br />
+        Location: @ViewData["Location"]
+    </div>
+}
